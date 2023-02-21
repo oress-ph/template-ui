@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  APIURLHost: 'https://berben-api.docker.hk.hiro-test.net'
+  APIURLHost: 'https://template-api.docker.hk.hiro-test.net'
 };

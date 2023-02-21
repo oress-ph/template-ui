@@ -11,7 +11,7 @@ export class SocketIoService {
   // socket = io.connect("http://localhost:3001");
 
   // Server Testing
-  socket = io.connect("https://berben-socketio.hiro-test.net/");
+  socket = io.connect("https://template-socketio.hiro-test.net/");
 
   constructor() { }
 

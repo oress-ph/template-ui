@@ -82,13 +82,13 @@ export class LayoutComponent implements OnInit {
                 })
             }
 
-            if (this.items[0].label == 'Dispatching') this.home = { icon: 'berben-icon-dispatching' };
-            if (this.items[0].label == 'Yards') this.home = { icon: 'berben-icon-yard' };
-            if (this.items[0].label == 'Storage') this.home = { icon: 'berben-icon-storage' };
-            if (this.items[0].label == 'Sales') this.home = { icon: 'berben-icon-sales' };
-            if (this.items[0].label == 'Receiving') this.home = { icon: 'berben-icon-receiving' };
-            if (this.items[0].label == 'Dashboard') this.home = { icon: 'berben-icon-dashboard' };
-            if (this.items[0].label == 'Admin') this.home = { icon: 'berben-icon-admin' };
+            if (this.items[0].label == 'Dispatching') this.home = { icon: 'template-icon-dispatching' };
+            if (this.items[0].label == 'Yards') this.home = { icon: 'template-icon-yard' };
+            if (this.items[0].label == 'Storage') this.home = { icon: 'template-icon-storage' };
+            if (this.items[0].label == 'Sales') this.home = { icon: 'template-icon-sales' };
+            if (this.items[0].label == 'Receiving') this.home = { icon: 'template-icon-receiving' };
+            if (this.items[0].label == 'Dashboard') this.home = { icon: 'template-icon-dashboard' };
+            if (this.items[0].label == 'Admin') this.home = { icon: 'template-icon-admin' };
         }
     }
 

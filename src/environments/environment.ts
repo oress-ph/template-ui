@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   APIURLHost: 'http://127.0.0.1:8000',
-  // APIURLHost: 'https://berben-api.docker.hk.hiro-test.net'
+  // APIURLHost: 'https://template-api.docker.hk.hiro-test.net'
 };
 
 /*

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  APIURLHost: 'https://berben-api.human-incubator.com',
+  APIURLHost: 'https://template-api.human-incubator.com',
 };

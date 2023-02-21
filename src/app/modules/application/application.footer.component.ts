@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
     template: `
         <div class="layout-footer">
             <div class="layout-footer-left">
-                <span>BERBEN </span>
+                <span>template </span>
                 <a href="#">&copy; 2022</a>
             </div>
 

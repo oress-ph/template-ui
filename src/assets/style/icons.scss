@@ -1,4 +1,4 @@
-.berben-icon-sales {
+.template-icon-sales {
   // width:100px;
   display:block;
   width: 20px;
@@ -10,9 +10,9 @@
   padding-left:20px;
 }
 
-.berben-icon-sales:after {
+.template-icon-sales:after {
   content: '';
-    background:url('../images/berben-icons/sales-and-marketing.png') no-repeat 0px 0px;
+    background:url('../images/template-icons/sales-and-marketing.png') no-repeat 0px 0px;
     background-position: center;
     // background-size: cover;
     background-size: contain;
@@ -24,7 +24,7 @@
 }
 
 
-.berben-icon-storage {
+.template-icon-storage {
   // width:100px;
   display:block;
   width: 20px;
@@ -36,9 +36,9 @@
   padding-left:20px;
 }
 
-.berben-icon-storage:after {
+.template-icon-storage:after {
   content: '';
-    background:url('../images/berben-icons/storage.png') no-repeat 0px 0px;
+    background:url('../images/template-icons/storage.png') no-repeat 0px 0px;
     background-position: center;
     // background-size: cover;
     background-size: contain;
@@ -48,7 +48,7 @@
     height: 15px;
     margin-left:-20px;
 }
-.berben-icon-admin {
+.template-icon-admin {
   // width:100px;
   display:block;
   width: 20px;
@@ -60,34 +60,9 @@
   padding-left:20px;
 }
 
-.berben-icon-admin:after {
+.template-icon-admin:after {
   content: '';
-    background:url('../images/berben-icons/admin.png') no-repeat 0px 0px;
-    background-position: center;
-    // background-size: cover;
-    background-size: contain;
-    position:absolute;
-    max-width: 100%;
-    width: 20px;
-    height: 15px;
-    margin-left:-20px;
-}
-
-.berben-icon-dispatching {
-  // width:100px;
-  display:block;
-  width: 20px;
-  height: 15px;
-  max-width: 100%;
-  // background:black;
-  color:white;
-  text-decoration:none;
-  padding-left:20px;
-}
-
-.berben-icon-dispatching:after {
-  content: '';
-    background:url('../images/berben-icons/dispatching.png') no-repeat 0px 0px;
+    background:url('../images/template-icons/admin.png') no-repeat 0px 0px;
     background-position: center;
     // background-size: cover;
     background-size: contain;
@@ -98,8 +73,7 @@
     margin-left:-20px;
 }
 
-
-.berben-icon-receiving {
+.template-icon-dispatching {
   // width:100px;
   display:block;
   width: 20px;
@@ -111,9 +85,9 @@
   padding-left:20px;
 }
 
-.berben-icon-receiving:after {
+.template-icon-dispatching:after {
   content: '';
-    background:url('../images/berben-icons/receiving.png') no-repeat 0px 0px;
+    background:url('../images/template-icons/dispatching.png') no-repeat 0px 0px;
     background-position: center;
     // background-size: cover;
     background-size: contain;
@@ -125,7 +99,7 @@
 }
 
 
-.berben-icon-yard {
+.template-icon-receiving {
   // width:100px;
   display:block;
   width: 20px;
@@ -137,9 +111,9 @@
   padding-left:20px;
 }
 
-.berben-icon-yard:after {
+.template-icon-receiving:after {
   content: '';
-    background:url('../images/berben-icons/yard.png') no-repeat 0px 0px;
+    background:url('../images/template-icons/receiving.png') no-repeat 0px 0px;
     background-position: center;
     // background-size: cover;
     background-size: contain;
@@ -151,7 +125,7 @@
 }
 
 
-.berben-icon-settings {
+.template-icon-yard {
   // width:100px;
   display:block;
   width: 20px;
@@ -163,9 +137,9 @@
   padding-left:20px;
 }
 
-.berben-icon-settings:after {
+.template-icon-yard:after {
   content: '';
-    background:url('../images/berben-icons/settings.png') no-repeat 0px 0px;
+    background:url('../images/template-icons/yard.png') no-repeat 0px 0px;
     background-position: center;
     // background-size: cover;
     background-size: contain;
@@ -177,7 +151,7 @@
 }
 
 
-.berben-icon-dashboard {
+.template-icon-settings {
   // width:100px;
   display:block;
   width: 20px;
@@ -189,9 +163,35 @@
   padding-left:20px;
 }
 
-.berben-icon-dashboard:after {
+.template-icon-settings:after {
   content: '';
-    background:url('../images/berben-icons/dashboard.png') no-repeat 0px 0px;
+    background:url('../images/template-icons/settings.png') no-repeat 0px 0px;
+    background-position: center;
+    // background-size: cover;
+    background-size: contain;
+    position:absolute;
+    max-width: 100%;
+    width: 20px;
+    height: 15px;
+    margin-left:-20px;
+}
+
+
+.template-icon-dashboard {
+  // width:100px;
+  display:block;
+  width: 20px;
+  height: 15px;
+  max-width: 100%;
+  // background:black;
+  color:white;
+  text-decoration:none;
+  padding-left:20px;
+}
+
+.template-icon-dashboard:after {
+  content: '';
+    background:url('../images/template-icons/dashboard.png') no-repeat 0px 0px;
     background-position: center;
     // background-size: cover;
     background-size: contain;

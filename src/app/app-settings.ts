@@ -26,7 +26,7 @@ export class AppSettings {
     constructor() {
         let hostName = window.location.hostname;
         switch (hostName) {
-            case 'berben-ui-demo.hiro-test.net':
+            case 'template-ui-demo.hiro-test.net':
                 this.company_logo = '../../../assets/images/logo/logo/demo-logo.png';
                 break;
             default:

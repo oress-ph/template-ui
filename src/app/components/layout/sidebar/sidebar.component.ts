@@ -175,12 +175,12 @@ export class SidebarComponent implements OnInit {
     this.sideItems = [
       {
         label: 'Dashboard',
-        icon:'berben-icon-dashboard',
+        icon:'template-icon-dashboard',
         expanded: this.checkActiveState('/dashboard'),
       },
       {
       label: 'Administration',
-      icon:'berben-icon-admin',
+      icon:'template-icon-admin',
       expanded: this.checkActiveState('/admin/'),
       items: [
           {
