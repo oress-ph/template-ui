@@ -1,0 +1,567 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import "assets/style/icons.scss";
+@import "assets/style/application.scss";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.p-menubar {
+  padding: 0 100px !important;
+}
+
+.header-title {
+  padding: 10px 0px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(114, 114, 114);
+}
+
+.container {
+  padding: 20px;
+}
+
+.container-child {
+  padding: 5px;
+}
+
+.custom-position {
+  position: absolute;
+  bottom: 30px;
+}
+
+// Change color ourline of input
+
+span>.p-inputtext:enabled:focus {
+  border-color: #268367 !important;
+  box-shadow: 0 0 0 0.02rem #268367 !important;
+}
+
+.p-inputtext:enabled:focus {
+  border-color: #268367 !important;
+  box-shadow: 0 0 0 0.02rem #268367 !important;
+}
+
+.p-inputtext:enabled:hover {
+  border-color: #268367 !important;
+  box-shadow: 0 0 0 0.02rem #268367 !important;
+}
+
+.p-inputtext.number {
+  text-align: right !important;
+  font-weight: 700;
+}
+
+.p-inputtext.input-dark {
+  background-color: #000 !important;
+}
+
+.p-inputtext.text-green {
+  color: #4fe34a !important;
+}
+
+p-dropdown>div.p-dropdown.p-focus {
+  border-color: #268367 !important;
+  box-shadow: 0 0 0 0.02rem #268367 !important;
+}
+
+p-dropdown>div.p-dropdown:hover {
+  border-color: #268367 !important;
+  box-shadow: 0 0 0 0.02rem #268367 !important;
+}
+
+p-dropdownitem>li.p-dropdown-item.p-highlight {
+  color: #268367 !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  outline: none !important;
+}
+
+.p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+  background: #f2f2f2;
+  border-color: #268367;
+  color: #268367;
+  outline: none !important;
+}
+
+/* selected */
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background: #f2f2f2;
+  border-color: #268367 !important;
+  box-shadow: 0 0 0 0 #268367 !important;
+  color: #268367;
+}
+
+.p-tabview .p-tabview-nav>li.p-tabview-ink-bar {
+  background-color: #268367 !important;
+  outline: none !important;
+}
+
+/* CRUD BUTTON STYLING*/
+
+button:focus {
+  border-color: #268367 !important;
+  box-shadow: 0 0 0 0.02rem #268367 !important;
+}
+
+button.primary {
+  width: auto;
+  height: 32px;
+  border-radius: 5px;
+  border: 2px solid #268367;
+  background: #268367;
+  color: #f2f2f2;
+  opacity: 1;
+  font-style: normal !important;
+  font-size: 12px !important;
+  margin-left: 5px;
+}
+
+button.primary:hover {
+  background: #689f38 !important;
+  border: 2px solid #689f38 !important;
+  color: #fff !important;
+  opacity: 1;
+}
+
+button.cancel {
+  width: auto;
+  height: 32px;
+  border-radius: 5px;
+  border: 2px solid #f0cd96;
+  background: #f0cd96;
+  color: #f2f2f2;
+  opacity: 1;
+  font-style: normal !important;
+  font-size: 12px !important;
+  margin-left: 5px;
+}
+
+button.cancel:hover {
+  background: #9f7638 !important;
+  border: 2px solid #9f7638 !important;
+  color: #fff !important;
+  opacity: 1;
+}
+
+.custom .p-checkbox .p-checkbox-box {
+  width: 25px !important;
+  height: 35px !important;
+  margin-top: -7px !important;
+}
+.custom .p-checkbox .p-checkbox-box .p-checkbox-icon {
+  font-size: 10px !important;
+}
+
+
+button.delete {
+  width: auto;
+  height: 32px;
+  border-radius: 5px;
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color: #f2f2f2;
+  opacity: 1;
+  font-size: 12px !important;
+  margin-left: 5px;
+}
+
+button.delete:hover {
+  background: #ec1212c5 !important;
+  border: 2px solid #ec1212c5 !important;
+  color: #f2f2f2 !important;
+  opacity: 1;
+}
+
+button.delete:focus {
+  background: #ec1212c5 !important;
+  border: 2px solid #ec1212c5 !important;
+  color: #f2f2f2 !important;
+  opacity: 1;
+}
+
+button.search {
+  border: 2px solid #268367 !important;
+  background: #268367 !important;
+  color: #f2f2f2 !important;
+  opacity: 1;
+  font-size: 12px !important;
+}
+
+button.search:hover {
+  background: #689f38 !important;
+  border: 2px solid #689f38 !important;
+  color: #f2f2f2 !important;
+  opacity: 1;
+}
+
+button.close {
+  width: auto;
+  height: 32px;
+  border-radius: 5px;
+  border: 2px solid #eeb116;
+  background: #eeb116;
+  color: #f2f2f2;
+  opacity: 1;
+  font-size: 12px !important;
+  margin-left: 5px;
+}
+
+button.close:hover {
+  background: #ecc33d !important;
+  border: 2px solid #ecc33d !important;
+  color: #f2f2f2 !important;
+  opacity: 1;
+}
+
+button.close:focus {
+  background: #ecc33d !important;
+  border: 2px solid #ecc33d !important;
+  color: #f2f2f2 !important;
+  opacity: 1;
+}
+
+button.paginator {
+  color: gray !important;
+}
+
+button.disable {
+  pointer-events: none;
+  width: auto;
+  height: 32px;
+  border-radius: 5px;
+  border: 2px solid gray !important;
+  background: #f2f2f2;
+  color: gray !important;
+  font-size: 12px !important;
+}
+
+button.disable:hover {
+  background: #f2f2f2 !important;
+  border: 2px solid gray !important;
+  color: gray !important;
+}
+
+.p-checkbox-box {
+  border: 2px solid #268367 !important;
+  background: #268367 !important;
+}
+
+.r-checkbox {
+  pointer-events: none;
+}
+
+label {
+  color: rgb(158, 155, 155) !important;
+}
+
+.p-dropdown {
+  font-size: small !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--surface-d);
+}
+
+.sticker-container {
+  .sticker-header {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid rgb(141, 136, 136);
+    margin-bottom: 2rem;
+  }
+
+  .sticker {
+    position: relative;
+    left: 0;
+    // width: 100% !important;
+    height: 130px;
+    padding: 8px;
+    margin: 0 !important;
+    // border:1px solid #000;
+
+    .barcode {
+      padding: 0;
+      width: 100% !important;
+    }
+
+    .qrcode-content {
+      padding: 0;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: 30px;
+        left: 3px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  .sticker-layer-2 {
+    position: relative;
+    // top: 130px;
+    left: 0;
+    width: 100% !important;
+    height: 150px !important;
+    padding: 5px;
+    margin: 0 !important;
+    // border:1px solid #000;
+
+    .qrcode-content {
+      padding: 0;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: 45px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  .sticker-layer-3 {
+    position: absolute;
+    top: 350px;
+    left: 30%;
+    width: 250px !important;
+    height: 100px !important;
+    padding: 5px;
+    margin: 0 !important;
+    border: 1px solid #000;
+
+    .qrcode-content {
+      padding: 0;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: 45px;
+        right: 15px;
+        width: 50px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+.barcode-code {
+  position: relative;
+  font-size: 18px;
+  letter-spacing: 3px;
+  top: -10px;
+  left: 2px;
+  padding: 0px;
+  margin: 0;
+}
+
+.barcode-code-layer-2 {
+  width: 100%;
+
+  h4 {
+    font-size: 14px;
+    height: 20px;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+
+  .qrcode-contents {
+    position: absolute;
+    left: 50px;
+    top: 15px;
+    width: 100px;
+    height: 90px;
+
+    p {
+      font-size: 8px;
+      position: relative;
+      top: 5px;
+      left: 5px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .qrcode-disc {
+    position: absolute;
+    left: 160px;
+    top: 30px;
+
+    h4 {
+      font-size: 12px;
+      position: relative;
+      top: 5px;
+      left: 5px;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    p {
+      font-size: 8px;
+      position: relative;
+      top: 5px;
+      left: 5px;
+      margin: 0px;
+      padding: 0px;
+      padding-left: 10px;
+    }
+
+    img {
+      margin-top: 5px;
+      margin-left: 15px;
+    }
+  }
+
+  .qrcode-value {
+    position: absolute;
+    top: 80px;
+    left: 6px;
+    margin: 0;
+    padding: 0;
+
+    h5 {
+      font-size: 7px;
+      padding: 0px;
+      margin: 0;
+    }
+  }
+}
+
+.barcode-code-layer-3 {
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  top: -10px;
+  left: 10px;
+  padding: 0px;
+  margin: 0;
+}
+
+.storage-location {
+  position: relative;
+  font-size: 15px;
+  top: -15px;
+  left: 10px;
+}
+
+// .p-progress-spinner {
+//   position: absolute !important;
+//   top: 40%;
+//   left: 50%;
+// }
+
+.p-progressbar .p-progressbar-value {
+  border: 0 none;
+  margin: 0;
+  background: #268367 !important;
+}
+
+p-progressbar>div {
+  height: 4px !important;
+  border-radius: 0 !important;
+}
+
+.storage-dashboard {
+  .p-progressbar .p-progressbar-value {
+    border: 0 none;
+    margin: 0;
+    background: #268367 !important;
+  }
+
+  .p-progressbar .p-progressbar-value .p-progressbar-label {
+    font-size: 8px;
+    right: 30px;
+  }
+
+  p-progressbar>div {
+    height: 20px !important;
+    border-radius: 2px !important;
+  }
+}
+
+.help-block {
+  display: inline-block;
+  color: red;
+  font-size: 12px;
+  padding: 15px 10px;
+}
+
+.p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+  color: rgb(55, 165, 154) !important;
+}
+
+.p-panelmenu .p-panelmenu-header>a {
+  color: #268367 !important;
+
+}
+
+.p-menu-list {
+  color: #268367 !important;
+}
+
+.p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:focus {
+
+  color: #268367;
+}
+
+.p-panelmenu .p-panelmenu-header>a:focus {
+  box-shadow: none !important;
+}
+
+.p-panelmenu .p-panelmenu-header:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.p-panelmenu .p-panelmenu-header>a {
+  color: #268367;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link {
+  padding: 0.75rem 0.50rem 0.75rem 1.25rem !important;
+  border-radius: 0;
+  color: #268367 !important;
+  font-size: 12px !important;
+  box-shadow: none !important;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-icon {
+  color: #268367;
+  margin-right: 0.5rem;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem>ul>li:hover {
+  color: #268367 !important;
+  background-color: red;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-text {
+  color: #268367;
+  padding-left: 5px;
+}
+
+.p-breadcrumb {
+  border-color: transparent !important;
+}
+
+
+
+
+

@@ -1,0 +1,75 @@
+<div class="container">
+
+  <div fxLayout="row" fxLayout.xs="row" fxFLex="100">
+    <div fxFlex="15">
+      <h5>Selections</h5>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="row" fxFLex="100">
+    <div fxFlex="50">
+      <div class="p-inputgroup">
+        <input type="text" [(ngModel)]="keywords" pInputText placeholder="Search" (keyup.enter)="searchSelection()"
+          (keyup)="onSearchSelections($event)" (change)="searchSelection()">
+        <button type="button" pButton pRipple icon="pi pi-search" class="p-button-text search"
+          (click)="searchSelection()"></button>
+    </div>
+  </div>
+  <div fxFlex="50" fxLayout="row" fxLayout.xs="row" fxLayoutAlign="end center" fxLayoutGap.xs="15px">
+    <button [disabled]="!user_right.can_add" [ngClass]="{'disable' : !user_right.can_add}" pButton class="primary"
+      label="Add" (click)="addSelections()"></button>
+
+  </div>
+</div>
+
+<br>
+<p-table [value]="selections" [loading]="isLoading" [resizableColumns]="true" [lazy]="true"
+  (onLazyLoad)="getSelectionLazyEvent($event)" columnResizeMode="expand" [rowHover]="true"
+  [showCurrentPageReport]="true" [totalRecords]="totalRecords" currentPageReportTemplate=""
+  styleClass="p-datatable-stripes p-datatable-sm" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr class="text-xs">
+      <th pResizableColumn style="text-align: center; width: 7%">Edit</th>
+      <th pResizableColumn style="text-align: center; width: 7%">Delete</th>
+      <th pResizableColumn>Code</th>
+      <th pResizableColumn>Value</th>
+      <th pResizableColumn>Category</th>
+      <th pResizableColumn>Particulars</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-selection>
+    <tr class="text-xs" *ngIf="selection.length !== 0">
+      <td style="text-align: center">
+        <button pButton class="primary" label="Edit" (click)="editSelection(selection.id)"
+          [disabled]="!user_right.can_edit" [ngClass]="{'disable' : !user_right.can_edit}">
+        </button>
+      </td>
+      <td style="text-align: center">
+        <button pButton class="delete" label="Delete" (click)="deleteSelection(selection.id)"
+          [disabled]="!user_right.can_delete" [ngClass]="{'disable' : !user_right.can_delete}"></button>
+      </td>
+      <td>{{ selection.code}}</td>
+      <td>{{ selection.value}}</td>
+      <td>{{ selection.category}}</td>
+      <td>{{ selection.particulars}}</td>
+    </tr>
+    <tr class="text-xs" *ngIf="selection.length === 0">
+      <td style="text-align: center" colspan="4">No Records Found</td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<button pButton pRipple type="button" label="<<" class="p-button-text paginator" (click)="firstPage()"
+  [disabled]="pagination.prev == null"></button>
+<button pButton pRipple type="button" label="<" class="p-button-text paginator" (click)="prevPage()"
+  [disabled]="pagination.first == null"></button>
+<button pButton pRipple type="button" [label]="page_detail" class="p-button-text paginator" disabled></button>
+<button pButton pRipple type="button" label=">" class="p-button-text paginator" (click)="nextPage()"
+  [disabled]="pagination.next == null"></button>
+<button pButton pRipple type="button" label=">>" class="p-button-text paginator" (click)="lastPage()"
+  [disabled]="pagination.last == null"></button>
+
+</div>
+<p-toast [baseZIndex]="5000"></p-toast>
+<!-- <p-confirmDialog [style]="{width: '25vw'}" [position]="position" [baseZIndex]="10000"
+  acceptButtonStyleClass="p-button-sm primary" [rejectVisible]="false" acceptIcon="" acceptLabel="Delete">
+</p-confirmDialog> -->

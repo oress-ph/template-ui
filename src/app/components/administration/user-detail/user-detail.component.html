@@ -1,0 +1,165 @@
+<p-toast [baseZIndex]="5000"></p-toast>
+<p-progressBar mode="indeterminate" [style]="{'height': '6px'}" *ngIf="isContentShown == false"></p-progressBar>
+<div class="container" *ngIf="isContentShown">
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="50" style="padding: 15px">
+      <h5>User Detail</h5>
+    </div>
+    <div fxFlex="50" style="padding: 15px" class="flex justify-content-end">
+      <button
+        pButton
+        class="primary"
+        label="Save"
+        id="saveUser"
+        (click)="saveUser()"
+        [disabled]="!user_right.can_save" 
+        [ngClass]="{'disable' : !user_right.can_save}"
+      ></button>
+      &nbsp;
+      <button
+        pButton
+        class="close"
+        label="Close"
+        routerLink="/admin/users"
+      ></button>
+    </div>
+  </div>
+  <br />
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="50" style="padding: 15px">
+      <span class="p-float-label">
+        <input
+          type="text"
+          id="username"
+          pInputText
+          [style]="{ width: '100%' }"
+          class="p-inputtext-sm"
+          [(ngModel)]="userModel.username"
+          [disabled]="userModel.id != 0"
+        />
+        <label for="inputtext-left" class="text-500">Username</label>
+      </span>
+    </div>
+    <div fxFlex="50" style="padding: 15px">
+      <div class="field-checkbox">
+        <p-checkbox [(ngModel)]="userModel.is_active" [binary]="true" inputId="binary"></p-checkbox>
+        <label >{{ userModel.is_active == false ? 'Deactivate' : 'Activate' }}</label>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="50" style="padding: 15px">
+      <span class="p-float-label">
+        <input
+          type="text"
+          id="name"
+          pInputText
+          [style]="{ width: '100%' }"
+          class="p-inputtext-sm"
+          [disabled]="isProcessing"
+          [(ngModel)]="userModel.name"
+        />
+        <label for="inputtext-left" class="text-500">Name</label>
+      </span>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="50" style="padding: 15px">
+      <span class="p-float-label">
+        <input
+          type="text"
+          id="email"
+          pInputText
+          [style]="{ width: '100%' }"
+          class="p-inputtext-sm"
+          [disabled]="userModel.id != 0"
+          [(ngModel)]="userModel.email"
+        />
+        <label for="inputtext-left" class="text-500">Email</label>
+      </span>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="50" style="padding: 15px">
+      <span class="p-float-label">
+        <p-dropdown
+          inputId="dropdown"
+          class="p-inputtext-sm"
+          name="userTypDropdownList"
+          [(ngModel)]="userModel.user_type"
+          [options]="user_type_list"
+          optionValue="value"
+          optionLabel="name"
+          [style]="{ width: '100%' }"
+        ></p-dropdown>
+        <label for="inputtext-left" class="text-500">User Type</label>
+      </span>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="50" style="padding: 15px">
+      <span class="p-float-label">
+        <p-dropdown
+          class="p-inputtext-sm"
+          [(ngModel)]="userModel.warehouse_id"
+          [options]="warehouse_list"
+          optionValue="value"
+          optionLabel="name"
+          [style]="{ width: '100%' }"
+        ></p-dropdown>
+        <label for="inputtext-left" class="text-500">Warehouse</label>
+      </span>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="50" style="padding: 15px">
+      <span class="p-float-label">
+        <input
+          type="password"
+          pInputText
+          [style]="{ width: '100%' }"
+          class="p-inputtext-sm"
+          [disabled]="isProcessing || userModel.id != 0"
+          [(ngModel)]="userModel.password"
+        />
+        <label for="inputtext-left" class="text-500">Password</label>
+      </span>
+    </div>
+    <div fxFlex="50" style="padding: 15px">
+      <button
+      pButton
+      class="primary"
+      label="Change Password"
+      id="changePassword"
+      (click)="changePassword()"
+      [disabled]="isProcessing" 
+    ></button>
+    </div>
+  </div>
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxFLex="100"
+    *ngIf="userModel.id == 0"
+  >
+    <div fxFlex="50" style="padding: 15px">
+      <span class="p-float-label">
+        <input
+          type="password"
+          pInputText
+          [style]="{ width: '100%' }"
+          class="p-inputtext-sm"
+          [disabled]="isProcessing || userModel.id != 0"
+          [(ngModel)]="userModel.password_confirmation"
+        />
+        <label for="inputtext-left" class="text-500">Confirm Password</label>
+      </span>
+    </div>  
+  </div>
+
+  <p-tabView *ngIf="userModel.id != 0">
+    <p-tabPanel header="User Rights">
+      <app-user-rights [userId]="userModel.id"></app-user-rights>
+    </p-tabPanel>
+  </p-tabView>
+</div>

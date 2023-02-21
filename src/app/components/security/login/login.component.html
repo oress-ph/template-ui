@@ -1,0 +1,47 @@
+<main class="main-section">
+    <div class="login-section">
+        <p-card class="login-container">
+            <h2>Login</h2>
+            <div class="grid mt-2">
+                <div class="col-12 md:col-12 lg:col-12">
+                    <div class="p-fluid grid flex align-items-center justify-content-center flex-direction-column">
+                        <div class="col-12 md:col-8 lg:col-8">
+                            <span class="p-float-label p-input-icon-left">
+                                <i class="pi pi-user icons-color"></i>
+                                <input type="text" id="email" pInputText class="p-inputtext-md" [disabled]="isProcessing" [(ngModel)]="loginModel.username" (keyup.enter)="signIn($event)"> 
+                                <label for="inputtext-left" class="text-500">Username</label>
+                            </span>
+                        </div>
+                        <div class="col-12 md:col-8 lg:col-8">
+                            <span class="p-float-label p-input-icon-left">
+                                <i class="pi pi-lock icons-color"></i>
+                                <p-password id="password" [disabled]="isProcessing" [feedback]=false (keyup.enter)="signIn($event)" [(ngModel)]="loginModel.password" [toggleMask]="true"></p-password>
+                                <!-- <input type="password" pPassword  id="password" class="p-inputtext-md" [disabled]="isProcessing"
+                                [(ngModel)]="loginModel.password" (keyup.enter)="signIn($event)">  -->
+                                <label for="inputtext-left" class="text-500">Password</label>
+                            </span>
+                        </div>
+                        <div class="col-12 md:col-8 lg:col-8">
+                            <span class="p-float-label p-input-icon-left">
+                                <i class="pi pi-calendar icons-color"></i>
+                                <input type="text" id="date" pInputText class="p-inputtext-md" [disabled]="true"
+                                [(ngModel)]="dateToday">
+                            </span>
+                        </div>
+                        <div class="col-12 md:col-8 lg:col-8">
+                            <div class="field-checkbox">
+                                <label for="privacy">
+                                    <a href="//" target="_blank" rel="noopener noreferrer">Click here to view privacy policy.</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-8 lg:col-8">
+                            <button pButton type="button" label="Login" id="signIn" (click)="signIn($event)" [disabled]="isProcessing"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p-toast></p-toast>
+        </p-card> 
+    </div>
+</main>

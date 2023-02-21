@@ -1,0 +1,76 @@
+<div class="container-child">
+    <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+        <div fxFlex="100" style="padding: 15px;" class="flex justify-content-end">
+            <button pButton type="button" label="Copy User Rights" id="CopyUserRights" (click)="CopyUserRights()" class="close" [disabled]="!user_right.can_add" [ngClass]="{'disable' : !user_right.can_add}">
+            </button>
+            &nbsp;
+            <button pButton type="button" label="Add" id="addRights" (click)="addRights()" class="primary" [disabled]="!user_right.can_add" [ngClass]="{'disable' : !user_right.can_add}">
+            </button>
+        </div>
+    </div>
+
+    <p-table [value]="userRightsList" [rows]="10" [totalRecords]="100" responsiveLayout="scroll"
+        (onLazyLoad)="getUserRightsList($event)" columnResizeMode="expand" [lazy]="true" [rowHover]="true"
+        [showCurrentPageReport]="true" [rows]="10" [totalRecords]="totalRecords" currentPageReportTemplate=""
+        styleClass="p-datatable-stripes p-datatable-sm">
+        <ng-template pTemplate="header">
+            <tr class="text-xs">
+                <th style="text-align:center; width: 5%;">Edit</th>
+                <th style="text-align:center; width: 5%;">Delete</th>
+                <th>Module</th>
+                <th style="text-align: center;">Add</th>
+                <th style="text-align: center;">Edit</th>
+                <th style="text-align: center;">Delete</th>
+                <th style="text-align: center;">Print</th>
+                <th style="text-align: center;">Lock</th>
+                <th style="text-align: center;">Unlock</th>
+                <th style="text-align: center;">Save</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-right>
+            <tr class="text-xs" *ngIf="right.length != 0">
+                <td>
+                    <button pButton class="primary" label="Edit" id="editRight" (click)="editRight(right.id)"
+                        [disabled]="!user_right.can_edit" [ngClass]="{'disable' : !user_right.can_edit}">
+                    </button>
+                </td>
+                <td>
+                    <button pButton class="delete" id="deleteUserRight" (click)="deleteUserRight(right.id)" label="Delete"
+                        [disabled]="!user_right.can_delete" [ngClass]="{'disable' : !user_right.can_delete}">
+                    </button>
+                </td>
+                <td>{{right.system_module.system_module}}</td>
+                <td style="text-align: center;">
+                    <input type="checkbox" class="r-checkbox" [(ngModel)]="right.can_add" style="width: auto;">
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" class="r-checkbox" [(ngModel)]="right.can_edit" style="width: auto;">
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" class="r-checkbox" [(ngModel)]="right.can_delete" style="width: auto;">
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" class="r-checkbox" [(ngModel)]="right.can_print" style="width: auto;">
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" class="r-checkbox" [(ngModel)]="right.can_lock" style="width: auto;">
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" class="r-checkbox" [(ngModel)]="right.can_unlock" style="width: auto;">
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" class="r-checkbox" [(ngModel)]="right.can_save" style="width: auto;">
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <button pButton pRipple type="button" label="<<" class="p-button-text paginator" id="firstPage" (click)="firstPage()"></button>
+    <button pButton pRipple type="button" label="<" class="p-button-text paginator" id="prevPage" (click)="prevPage()"></button>
+    <button pButton pRipple type="button" [label]="page_detail" class="p-button-text paginator" disabled></button>
+    <button pButton pRipple type="button" label=">" class="p-button-text paginator" id="nextPage" (click)="nextPage()"></button>
+    <button pButton pRipple type="button" label=">>" class="p-button-text paginator" id="lastPage" (click)="lastPage()"></button>
+</div>
+<!-- <p-confirmDialog [style]="{width: '25vw'}" [position]="position" [baseZIndex]="10000"
+    acceptButtonStyleClass="p-button-sm primary" [rejectVisible]="false" acceptIcon="" acceptLabel="Delete">
+</p-confirmDialog> -->

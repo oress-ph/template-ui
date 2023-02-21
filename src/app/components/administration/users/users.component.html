@@ -1,0 +1,56 @@
+<div class="container">
+  <div fxLayout="row" fxLayout.xs="row" fxFLex="100">
+    <div fxFlex="15">
+      <h5>Users</h5>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="row" fxFLex="100">
+    <div fxFlex="50">
+      <div class="p-inputgroup">
+        <input #input type="text" [(ngModel)]="keywords" pInputText placeholder="Search" (keyup.enter)="searchUsers()"
+          (keyup)="onSearchUsers($event)" (change)="searchUsers()" id="searchUsers" />
+        <button type="button" pButton pRipple icon="pi pi-search" class="p-button-text search"
+          (click)="searchUsers()"></button>
+      </div>
+    </div>
+    <div fxFlex="50" fxLayout="row" fxLayout.xs="row" fxLayoutAlign="end center" fxLayoutGap.xs="15px">
+      <button pButton class="primary" label="Add" (click)="addUser()" [disabled]="!user_right.can_add" [ngClass]="{ disable: !user_right.can_add }"></button>
+    </div>
+  </div>
+
+  <br />
+  <p-table [value]="userList" responsiveLayout="scroll" [loading]="isLoading" [rowHover]="true"
+    [showCurrentPageReport]="true" [rows]="10" [totalRecords]="totalRecords" currentPageReportTemplate=""
+    (onLazyLoad)="getUsersLazyEvent($event)" columnResizeMode="expand" [lazy]="true"
+    styleClass="p-datatable-stripes p-datatable-sm">
+    <ng-template pTemplate="header">
+      <tr class="text-xs">
+        <th style="text-align: center; width: 5%">Edit</th>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th>Status</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-users>
+      <tr class="text-xs" *ngIf="users.length !== 0">
+        <td>
+          <button pButton class="primary" id="updateUser" (click)="updateUser(users.id)" label="Edit" [disabled]="!user_right.can_edit"
+            [ngClass]="{ disable: !user_right.can_edit }"></button>
+        </td>
+        <td>{{ users.username }}</td>
+        <td>{{ users.name }}</td>
+        <td>{{ users.email }}</td>
+        <td>{{ users.user_type }}</td>
+        <td>{{ users.is_active == false ? 'Deactivate' : 'Activate' }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <button pButton pRipple type="button" label="<<" class="p-button-text paginator" id="firstPage" (click)="firstPage()"></button>
+  <button pButton pRipple type="button" label="<" class="p-button-text paginator" id="prevPage" (click)="prevPage()"></button>
+  <button pButton pRipple type="button" [label]="page_detail" class="p-button-text paginator" disabled></button>
+  <button pButton pRipple type="button" label=">" class="p-button-text paginator" id="nextPage" (click)="nextPage()"></button>
+  <button pButton pRipple type="button" label=">>" class="p-button-text paginator" id="lastPage" (click)="lastPage()"></button>
+</div>

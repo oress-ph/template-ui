@@ -1,0 +1,8 @@
+<p-menubar [model]="items" class="header">
+    <ng-template pTemplate="start" >
+        <img [routerLink]="['/main']" id="logo" src="{{company_logo}}" >
+    </ng-template>
+</p-menubar>
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>

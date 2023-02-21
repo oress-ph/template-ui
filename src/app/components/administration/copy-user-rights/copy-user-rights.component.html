@@ -1,0 +1,22 @@
+
+
+  <div class="container" *ngIf="isComponentShown">
+
+    <div fxLayout="column" fxLayout.xs="column" fxFLex="100" fxLayoutAlign="space-between stretch" fxLayoutGap="200px">
+      <div fxFlex="100">
+        <span class="p-float-label">        
+          <p-dropdown  class="p-inputtext-sm" inputId="dropdown" [filter]="true" filterBy="name" class="p-inputtext-sm" name="moduleDropdownList" [(ngModel)]="user_id" [options]="users" optionValue="value"
+            optionLabel="name" [style]="{'width': '100%'}"></p-dropdown>
+          </span>
+      </div>
+      <div fxFlex="100" fxLayoutAlign="end center">
+        <button
+          pButton
+          class="close"
+          label="Copy"
+          id="copy"
+          (click)="copy()"
+        ></button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,47 @@
+<br>
+<div class="container-child" *ngIf="isComponentShown">
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="100" style="padding: 15px;">
+      <span class="p-float-label">
+        <input type="text" id="inputtext" class="p-inputtext-sm" [(ngModel)]="selectionModel.code"
+          [style]="{'width': '100%'}" pInputText>
+        <label for="inputtext" class="p-text-sm">Code</label>
+      </span>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="100" style="padding: 15px;">
+      <span class="p-float-label">
+        <input type="text" id="inputtext" class="p-inputtext-sm" [(ngModel)]="selectionModel.value"
+          [style]="{'width': '100%'}" pInputText>
+        <label for="inputtext" class="p-text-sm">Value</label>
+      </span>
+    </div>
+  </div>
+  
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="100" style="padding: 15px;">
+      <span class="p-float-label">
+        <input type="text" id="inputtext" class="p-inputtext-sm" [(ngModel)]="selectionModel.category"
+          [style]="{'width': '100%'}" pInputText>
+        <label for="inputtext" class="p-text-sm">Category</label>
+      </span>
+    </div>
+  </div>
+  
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="100" style="padding: 15px;">
+      <span class="p-float-label">
+        <textarea inputId="textarea" rows="4" style="resize: none;" cols="30" [(ngModel)]="selectionModel.particulars"
+          [style]="{'width': '100%'}" pInputTextarea ></textarea>
+        <label for="inputtext" class="p-text-sm">Particular</label>
+      </span>
+    </div>
+  </div>
+  
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="100" style="padding: 15px;">
+      <button pButton type="button" label="Save" id="save" (click)="save()" [style]="{'width': '100%'}" class="primary"></button>
+    </div>
+  </div>
+</div>

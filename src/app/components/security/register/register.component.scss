@@ -1,0 +1,73 @@
+main.main-section {
+  background-color: #F2F2F2;
+  padding: 2.5rem 0 3.5rem 0;
+
+  .register-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    padding: 0;
+    margin: 0  auto;
+  
+      h2 {
+        text-align: center;
+        height: 36px;
+        margin-bottom: 2rem;
+      }
+      span {
+        margin-bottom: 15px;
+      }
+      input {
+        border-color: #0060794F;
+        background-color: #FFFFFF;
+      }
+      div.divider {
+        height: 1px;
+        width: 100%;
+        background-color: #0060794F;
+        opacity: 1;
+      }
+
+      .icons-color {
+        color: #006079;
+        font-size: 1rem;
+      }
+    }
+}
+
+p-divider {
+    color: #006079;
+    font-size: 14px;
+    margin: 0 !important;
+    padding: 10px !important;
+    font-family: 'Roboto' sans-serif;
+    font-weight: 900;
+}
+
+button {
+  width: 100%;
+  height: 45px;
+  border-radius: 30px;
+  border: 2px solid #268367;
+  margin-top: .5rem;
+  background: #268367;
+  color: #F2F2F2;
+  opacity: 1;
+  margin-bottom: 2rem;
+}
+
+button:hover {
+  background: #F2F2F2 !important;
+  border: 2px solid #268367 !important;
+  color: #268367 !important;
+  opacity: 1;
+}
+
+::ng-deep .p-card {
+  border: 1px solid #00607950;
+  border-radius: 10px !important;
+}
+
+

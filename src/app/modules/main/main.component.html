@@ -1,0 +1,17 @@
+<p-menubar [model]="items" class="header">
+    <ng-template pTemplate="start" >
+        <img id="logo" src="../../../assets/images/logo/demo-logo.png">
+    </ng-template>
+    <ng-template pTemplate="end" class="mt-5">
+        <p-button styleClass="p-button-text p-button-sm text-600" routerLink='/security/login'>
+            <img alt="logo" src="assets/images/logo/demo-logo.png" style="width: 1.5rem"/>
+            <span class="ml-2 font-bold">Login</span>
+        </p-button>
+    </ng-template>
+</p-menubar>
+<!-- <p-menubar [model]="subItems" class="sub-header"></p-menubar> -->
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+

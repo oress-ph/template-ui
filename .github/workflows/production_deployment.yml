@@ -1,0 +1,45 @@
+name: production_deployment
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+          - 14.x
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules-production
+        with:
+          path: node_modules
+          key: ${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ env.cache-name }}-
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: build
+        run: |
+          npm i
+          npm run build -- -c production
+      - name: deploy
+        run: |
+          aws configure set aws_access_key_id "${{ secrets.AWS_ID }}"
+          aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET }}"
+          aws configure set region "${{ secrets.AWS_PROD_REGION }}"
+          aws s3 sync --delete --size-only dist/ ${{ secrets.S3_PROD_ADDRESS }}
+          aws s3 cp dist/index.html ${{ secrets.S3_PROD_ADDRESS }}
+          aws cloudfront create-invalidation --distribution-id "${{ secrets.PROD_DISTRIBUTION_ID }}" --paths "/*"

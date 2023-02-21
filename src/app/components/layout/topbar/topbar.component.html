@@ -1,0 +1,16 @@
+<div class="layout-topbar">
+  <a class="menu-button" (click)="onMenuButtonClick($event)" [ngClass]="{ hide : hide}">
+    <i class="pi pi-bars"></i>
+  </a>
+  <a routerLink="#" class="logo">
+    <img alt="logo" src='{{company_logo}}' class="imag-logo" />
+  </a>
+  <div class="top-header">
+    <div></div>
+    <div>{{ user_type }}</div>
+  </div>
+
+  <!-- <ul #topbarMenu class="topbar-menu">
+      <li><a (click)="logout()">Logout</a></li>
+    </ul> -->
+</div>

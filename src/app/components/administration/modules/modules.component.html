@@ -1,0 +1,63 @@
+<div class="container">
+    <div fxLayout="row" fxLayout.xs="row" fxFLex="100">
+        <div fxFlex="15">
+            <h5>Modules</h5>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayout.xs="row" fxFLex="100">
+        <div fxFlex="50">
+            <div class="p-inputgroup">
+                <input #input type="text" [(ngModel)]="keywords" pInputText placeholder="Search"
+                    (keyup.enter)="searchModules()" (keyup)="onSearchModules($event)" (change)="searchModules()" />
+                <button type="button" pButton pRipple icon="pi pi-search" class="p-button-text search"
+                    (click)="searchModules()"></button>
+            </div>
+        </div>
+        <div fxFlex="50" fxLayout="row" fxLayout.xs="row" fxLayoutAlign="end center" fxLayoutGap.xs="15px">
+            <button pButton class="primary" [disabled]="!user_right.can_add"
+                [ngClass]="{'disable' : !user_right.can_add}" label="Add" (click)="addModule()"></button>
+        </div>
+    </div>
+    <br>
+    <p-table [value]="moduleList" responsiveLayout="scroll" [loading]="isLoading" [rowHover]="true"
+        [showCurrentPageReport]="true" [rows]="10" [totalRecords]="totalRecords" currentPageReportTemplate=""
+        (onLazyLoad)="getModulesLazyEvent($event)" columnResizeMode="expand" [lazy]="true"
+        styleClass="p-datatable-stripes p-datatable-sm">
+        <ng-template pTemplate="header">
+            <tr class="text-xs">
+                <th style="text-align:center; width: 5%;">Edit</th>
+                <th style="text-align:center; width: 5%;">Delete</th>
+                <th>Module</th>
+                <th>Particulars</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-module>
+            <tr class="text-xs">
+                <td style="text-align: center;">
+                    <button pButton class="primary" [disabled]="!user_right.can_edit" (click)="editModule(module.id)"
+                        label="Edit" [ngClass]="{'disable' : !user_right.can_edit}">
+                    </button>
+                </td>
+                <td style="text-align: center;">
+                    <button pButton class="delete" [disabled]="!user_right.can_delete" (click)="deleteModule(module.id)"
+                        label="Delete" [ngClass]="{'disable' : !user_right.can_delete}">
+                    </button>
+                </td>
+                <td>{{module.system_module}}</td>
+                <td>{{module.description}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <button pButton pRipple type="button" label="<<" class="p-button-text paginator" id="firstPage" (click)="firstPage()"></button>
+    <button pButton pRipple type="button" label="<" class="p-button-text paginator" id="prevPage" (click)="prevPage()"></button>
+    <button pButton pRipple type="button" [label]="page_detail" class="p-button-text paginator" disabled></button>
+    <button pButton pRipple type="button" label=">" class="p-button-text paginator" id="nextPage" (click)="nextPage()"></button>
+    <button pButton pRipple type="button" label=">>" class="p-button-text paginator" id="lastPage" (click)="lastPage()"></button>
+</div>
+
+<!-- <p-confirmDialog [style]="{width: '25vw'}" [position]="position" [baseZIndex]="10000"
+    acceptButtonStyleClass="p-button-sm primary" [rejectVisible]="false" acceptIcon="" acceptLabel="Delete">
+</p-confirmDialog> -->
+
+<p-toast [baseZIndex]="5000"></p-toast>

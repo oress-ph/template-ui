@@ -1,0 +1,28 @@
+<br />
+<div class="container-child" *ngIf="isContentShown">
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="100" style="padding: 15px">
+      <span class="p-float-label">
+        <input type="text" id="inputtext" class="p-inputtext-sm" [(ngModel)]="systemModel.system_module"
+          [style]="{ width: '100%' }" pInputText />
+        <label for="inputtext" class="p-text-sm">Module</label>
+      </span>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="100" style="padding: 15px">
+      <span class="p-float-label">
+        <textarea inputId="textarea" rows="4" style="resize: none;" cols="30" [(ngModel)]="systemModel.description"
+          [style]="{'width': '100%'}" pInputTextarea ></textarea>
+        <label for="inputtext" class="p-text-sm">Description</label>
+      </span>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayout.xs="column" fxFLex="100">
+    <div fxFlex="100" style="padding: 15px;">
+      <button pButton type="button" label="Save" id="save" (click)="save()" [style]="{'width': '100%'}" class="primary"></button>
+    </div>
+  </div>
+</div>
